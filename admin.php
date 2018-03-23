@@ -62,7 +62,7 @@ if (isset($_SESSION['admin'])) {
 		}
 	}
 } else {
-	$alert = 'Please Login';
+	$alert = 'ログインしてください';
 }
 ?>
 <!DOCTYPE html>
@@ -77,7 +77,7 @@ if (isset($_SESSION['admin'])) {
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 	<style type="text/css"> 
 	body {  
-		font-family: 'Saira Extra Condensed', sans-serif;
+		;font-family: 'Saira Extra Condensed', sans-serif;
 		font-weight:400;
 		font-size:0.875em;
 		letter-spacing:0.063em;
@@ -123,7 +123,7 @@ if (isset($_SESSION['admin'])) {
 				<a class="nav-link" data-toggle="tab" href="#captcha">Captcha</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" data-toggle="tab" href="#ads">Ads</a>
+				<a class="nav-link" data-toggle="tab" href="#ads">広告</a>
 			</li>
 			<li class="nav-item">
 				<a class="nav-link" data-toggle="tab" href="#security">Security</a>
@@ -135,22 +135,22 @@ if (isset($_SESSION['admin'])) {
 				<form action="?g" method="post">
 					<span class="badge badge-success">General Info</span>
 					<div class="form-group">
-						<label for="name">Name</label>
+						<label for="name">名前</label>
 						<input type="text" name="name" class="form-control" id="name" aria-describedby="namehelp" value="<?=get_info(1)?>">
-						<small id="namehelp" class="form-text text-muted">Your Faucet's Name</small>
+						<small id="namehelp" class="form-text text-muted">このFaucetの名前</small>
 					</div>
 					<div class="form-group">
-						<label for="description">Description</label>
+						<label for="description">説明</label>
 						<input type="text" name="description" class="form-control" id="description" aria-describedby="descriptionhelp" value="<?=get_info(2)?>">
-						<small id="descriptionhelp" class="form-text text-muted">Say something about your Faucet</small>
+						<small id="descriptionhelp" class="form-text text-muted">このFaucetの説明</small>
 					</div>
 					<div class="form-group">
 						<label for="url">Url</label>
 						<input type="url" name="url" class="form-control" id="url" aria-describedby="urlhelp" value="<?=get_info(3)?>">
-						<small id="urlhelp" class="form-text text-muted">Your Faucet's Url</small>
+						<small id="urlhelp" class="form-text text-muted">あなたのFaucetのUrl</small>
 					</div>
 					<div class="form-group">
-						<label for="theme">Select Theme</label>
+						<label for="theme">テーマ</label>
 						<select class="form-control" id="theme" name="theme">
 							<?php
 							$current_theme = get_info(4);
@@ -176,17 +176,17 @@ if (isset($_SESSION['admin'])) {
 						<small id="apihelp" class="form-text text-muted">Your Microzeny Faucet Api Key</small>
 					</div>
 					<div class="form-group">
-						<label for="currency">Currency</label>
+						<label for="currency">単位</label>
 						<input type="text" name="currency" class="form-control" id="currency" aria-describedby="currencyhelp" value="<?=get_info(5)?>">
 						<small id="currencyhelp" class="form-text text-muted">Your Faucet's Currency (ZNY is supported by Micozeny)</small>
 					</div>
 					<div class="form-group">
-						<label for="currency">Timer</label>
+						<label for="currency">受け取りの間隔</label>
 						<input type="number" name="timer" class="form-control" id="timer" aria-describedby="timerhelp" value="<?=get_info(7)?>">
 						<small id="timerhelp" class="form-text text-muted">Your Faucet's Timer in seconds</small>
 					</div>
 					<div class="form-group">
-						<label for="reward">Reward</label>
+						<label for="reward">払い出される金額</label>
 						<input type="text" name="reward" class="form-control" id="reward" aria-describedby="rewardhelp" value="<?=get_info(8)?>">
 						<small id="rewardhelp" class="form-text text-muted">Your Faucet's Reward</small>
 					</div>
