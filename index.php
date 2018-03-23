@@ -87,15 +87,15 @@ if (isset($_POST['address']) and isset($_POST['token'])) {
 						$mysqli->query("UPDATE settings SET value = '$new_balance' WHERE id = '30'");
 						$alert = "<center><img style='max-width: 200px;' src='template/img/trophy.png'><br>{$result['html']}</center>";
 					} else {
-						$alert = "<center><img style='max-width: 200px;' src='template/img/trophy.png'><br><div class='alert alert-danger'>Failed to send your reward :(</div></center>"; 
+						$alert = "<center><img style='max-width: 200px;' src='template/img/trophy.png'><br><div class='alert alert-danger'>払い出しに失敗しました (・_・)</div></center>"; 
 					}
 				}
 			}
 		} else {
-			$alert = "<center><img style='max-width: 200px;' src='template/img/bots.png'><br><div class='alert alert-warning'>Invalid Captcha</div></center>"; 
+			$alert = "<center><img style='max-width: 200px;' src='template/img/bots.png'><br><div class='alert alert-warning'>Captchaに失敗しました</div></center>"; 
 		}
 	} else {
-		$alert = "<center><img style='max-width: 200px;' src='template/img/bots.png'><br><div class='alert alert-warning'>Invalid Token</div></center>"; 
+		$alert = "<center><img style='max-width: 200px;' src='template/img/bots.png'><br><div class='alert alert-warning'>無効なトークン</div></center>"; 
 	}
 }
 
@@ -134,7 +134,6 @@ $_SESSION['token'] = get_token(70);
 	<title><?=$faucet['name']?> - <?=$faucet['description']?></title> 
 	<link rel="shortcut icon" href="template//img/favicon.ico" type="image/x-icon">
 	<link rel="icon" href="template/img/favicon.ico" type="template/image/x-icon">
-	<!--<link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed" rel="stylesheet">-->
 	<link rel="stylesheet" type="text/css" href="template/css/<?=$faucet['theme']?>.css"> 
 	<link rel="stylesheet" href="template/css/countdown.css"> 
 	<style type="text/css"> 
@@ -241,7 +240,7 @@ $_SESSION['token'] = get_token(70);
 			</ul>
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#"><i class="fa fa-balance-scale" aria-hidden="true"></i> Faucet Balance: <?=get_info(30)?> <?=$currency_name?> <span class="sr-only">(current)</span></a>
+					<a class="nav-link" href="#"><i class="fa fa-balance-scale" aria-hidden="true"></i> Faucetの残高: <?=get_info(30)?> <?=$currency_name?> <span class="sr-only">(current)</span></a>
 				</li>
 			</ul>
 		</div>
